@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: bbe1f225c95157704d4f557087bde48a5b1ad2df3394cd23e135371d453065e2
+-- hash: db5eadc0fdbb8fb40f0fd3e943e8fc42024aed9e983cbee14521a98136f31706
 
 name:           adventofcode2020
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Utils
   other-modules:
       Paths_adventofcode2020
   hs-source-dirs:
