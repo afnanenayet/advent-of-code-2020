@@ -38,9 +38,9 @@ data Problem a = Problem
 instance Show a => Show (Problem a) where
   show (Problem d name res) =
     mconcat
-      [ "Day ",
+      [ "[Day ",
         show d,
-        ": ",
+        "] ",
         name,
         "\n",
         "result: ",

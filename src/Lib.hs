@@ -1,4 +1,8 @@
-module Lib where
+module Lib
+  ( reportRepair,
+    reportRepairPart2,
+  )
+where
 
 -- | Get all subsequences of a list of size N
 subsequences :: Int -> [a] -> [[a]]
@@ -18,8 +22,17 @@ subsequences n xs@(x : rest) =
 -- Find two entries in the list that sum to 2020 and then multiply them
 -- together
 reportRepair :: [Int] -> Int
-reportRepair xs = multiply answer
+reportRepair xs = product answer
   where
     allPairs = subsequences 2 xs
-    answer = head $ filter (\(x : y : _) -> x + y == 2020) allPairs
-    multiply (x : y : _) = x * y
+    answer = head $ filter ((== 2020) . sum) allPairs
+
+-- | Day 2
+--
+-- Find three entries in the list that sum to 2020 and then multiply them
+-- together
+reportRepairPart2 :: [Int] -> Int
+reportRepairPart2 xs = product answer
+  where
+    allPairs = subsequences 3 xs
+    answer = head $ filter ((== 2020) . sum) allPairs
