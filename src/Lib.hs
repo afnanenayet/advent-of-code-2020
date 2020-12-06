@@ -5,6 +5,11 @@ module Lib
 where
 
 -- | Get all subsequences of a list of size N
+--
+-- We construct each subsequence by finding all of the subsequences of size `n`
+-- that contain x, and appending that to the subsequences of size `n` that
+-- don't contain x, repeating this recursively, and filtering out any
+-- subsequences that are less than the requested size.
 subsequences :: Int -> [a] -> [[a]]
 subsequences 0 _ = [[]]
 subsequences _ [] = [[]]

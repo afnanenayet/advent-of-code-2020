@@ -6,6 +6,8 @@ import Utils
 
 main :: IO ()
 main = do
+  -- We declare a list of problems and print out the results using the pretty
+  -- printer
   let problems =
         [ day1part1,
           day1part2
@@ -24,8 +26,10 @@ day1part2 = do
   pure $ Problem 1 "Report Repair: Part 2" result
 
 -- | Pretty print a problem
+--
+-- This prints the problem with dividers above and below
 ppProblem :: Show a => Problem a -> IO ()
 ppProblem problem = do
   putStrLn $ unlines [divider, show problem, divider]
   where
-    divider = take 80 $ cycle "-"
+    divider = replicate 80 '-'
